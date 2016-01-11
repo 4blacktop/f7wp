@@ -154,7 +154,7 @@ function appReady(){
 	document.addEventListener("backbutton", function(e){
 		var page=myApp.getCurrentView().activePage;
 		myApp.hidePreloader();
-		if(page.name=="home”){
+		if(page.name=="home"){
 			e.preventDefault();
 			if(confirm("Do you want to Exit!"))
 				{
