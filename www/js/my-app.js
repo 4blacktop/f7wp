@@ -5,6 +5,7 @@ var myApp = new Framework7({
 	pushstate: true,// for h/w back button support MAYBE! KOSTYL
 	swipePanelActiveArea: 50,
 	material: true, //enable Material theme
+	allowDuplicateUrls: true, // allow loading of new pages that have same url as currently "active" page in View
 	
 	// Enable templates auto precompilation
     // precompileTemplates: true,
