@@ -138,29 +138,6 @@
 	app.initialize();
 </script> 
 
-
-<!-- <script>
-document.addEventListener("deviceready", appReady, false);
-function appReady(){
-	document.addEventListener("backbutton", function(e){
-		var page=myApp.getCurrentView().activePage;
-		myApp.hidePreloader();
-		if(page.name=="home"){
-			e.preventDefault();
-			if(confirm("Do you want to Exit!"))
-				{
-				navigator.app.clearHistory();
-				navigator.app.exitApp();
-				}
-			}
-		else {
-			navigator.app.backHistory()
-			}
-		}, false);
-	}
-</script> -->
-
-
 <script type="text/javascript" charset="utf-8">
 // Call onDeviceReady when PhoneGap is loaded.
 // At this point, the document has loaded but phonegap-1.0.0.js has not.
@@ -174,34 +151,7 @@ document.addEventListener("backbutton", onBackKeyDown, false);
 }
 // Handle the back button
 function onBackKeyDown() {
-
-
-
-
-		if(page.name=="index"){
-			e.preventDefault();
-			if(confirm("Do you want to Exit!"))
-				{
-				navigator.app.clearHistory();
-				navigator.app.exitApp();
-				}
-			}
-		else {
-			mainView.router.back()
-			}
-
-
-
-
-
-
-
-
-
-
-
-
-//mainView.router.back();
+mainView.router.back();
 }
 </script>	
 	
