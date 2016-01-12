@@ -6,7 +6,7 @@
 		<div class="navbar">
 			<div class="navbar-inner">
 				<div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><!-- <span>Back</span> --></a></div>
-			<div class="center">Post Title</div>
+			<div class="center">{{title.rendered}}</div>
 			</div>
 		</div>
 		
@@ -15,14 +15,8 @@
 
 		<div class="content-block">
 			<div class="content-block-inner">
-			<h3>{{vendor}} {{model}}</h3>
-			<ul>
-				<li><b>Power</b> - {{power}} hp</li>
-				<li><b>Max speed</b> - {{speed}} km/h</li>
-				<li><b>Weight</b> - {{weight}} kg</li>
-				<li><b>Color</b> - {{color}}</li>
-				<li><b>Year</b> - {{content.rendered}}</li>
-			</ul>
+			<h3>{{title.rendered}}</h3>
+			<p>{{content.rendered}}</p>
 			</div>
 		</div>		
 		
