@@ -48,7 +48,7 @@
 		<!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
 		<div class="pages navbar-fixed toolbar-fixed">
 			<!-- Page, "data-page" contains page name -->
-			<div data-page="index" class="page">
+			<div data-page="home" class="page">
 				<!-- Top Navbar. In Material theme it should be inside of the page-->
 				<div class="navbar">
 					<div class="navbar-inner">
@@ -156,9 +156,41 @@ document.addEventListener("backbutton", onBackKeyDown, false);
 }
 // Handle the back button
 function onBackKeyDown() {
-mainView.router.back();
-}
+	if(page.name=="home"){
+		e.preventDefault();
+		if(confirm("Do you want to Exit!"))
+			{
+			navigator.app.clearHistory();
+			navigator.app.exitApp();
+			}
+		}
+	else {
+		mainView.router.back();
+		}
+	}
 </script>	
+
+
+<!-- <script>
+document.addEventListener("deviceready", appReady, false);
+function appReady(){
+	document.addEventListener("backbutton", function(e){
+		var page=myApp.getCurrentView().activePage;
+		myApp.hidePreloader();
+		if(page.name=="home"){
+			e.preventDefault();
+			if(confirm("Do you want to Exit!"))
+				{
+				navigator.app.clearHistory();
+				navigator.app.exitApp();
+				}
+			}
+		else {
+			navigator.app.backHistory()
+			}
+		}, false);
+	}
+</script> -->
 	
 <!-- Path to Framework7 Library JS-->
 <script type="text/javascript" src="js/index.js"></script>
