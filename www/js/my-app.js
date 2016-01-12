@@ -6,8 +6,8 @@ var myApp = new Framework7({
 	swipePanelActiveArea: 50,
 	material: true, //enable Material theme
 	
-	    // Enable templates auto precompilation
-    precompileTemplates: true,
+	// Enable templates auto precompilation
+    // precompileTemplates: true,
     // Enabled pages rendering using Template7
     template7Pages: true,
     // Specify Template7 data for pages
