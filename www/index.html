@@ -26,9 +26,15 @@
 <!-- Left panel with cover effect-->
 <div class="panel panel-left panel-cover">
 	<div class="content-block">
-	<p>Left panel content goes here</p>
-	<p>Left panel content goes here2</p>
-	<p>Left panel content goes here3</p>
+	      <p>Список категорий:</p>
+      <!-- Click on link with "close-panel" class will close panel -->
+      <p><a href="posts.html" data-context-name="platinumarena" class="close-panel">Платинум Арена</a></p>
+      <p><a href="posts.html" data-context-name="velicano" class="close-panel">Великано</a></p>
+	  <br />
+      <p><a href="#" class="close-panel">Просто закрыть панель</a></p>
+	
+
+		<!-- http://27biletov.ru/wp-json/wp/v2/posts?filter[category_name]=platinum-arena -->
 	</div>
 </div>
   
@@ -52,11 +58,19 @@
 				
 				<!-- Page content here -->   
 				<div class="page-content">
-					<div class="content-block-title">Welcome To My Awesome App</div>
+					<div class="content-block-title">Привет, Денис! Это пре-альфа версия.</div>
 					<div class="content-block">
-						<p><a href="#" class="open-panel">Open Left Panel</a></p>
+						<p><a href="#" class="open-panel">Открыть левую панель</a></p>
 						<div class="content-block-inner">
-						<p>This app illustrates how you can use built-in template engine Template7 to render pages with required data.</p>
+						<p>Для рендеринга страниц работает шаблон-движок Template7. В настоящее время готовы:</p>
+						<p>1. Левая панель по свайпу с левой границы экрана, закрывается обратным свайпом или тапом в основное окно контента</p>
+						<p>2. Список категорий доступен из левой панели или с главной страницы</p>
+						<p>3. При переходе в категорию отображается список мероприятий</p>
+						<p>4. Material Design </p>
+						<p>5. В навбаре (сверху) иконка меню меняется на иконку "назад" если мы не на главной странице</p>
+						<p>6. Поддержка хардверной кнопки "назад" на устройстве</p>
+						<p>7. Навбар скрывается при скроллинге вниз, появляется при прокрутке до самого низа страницы, либо скроллинге вверх</p>
+						<p>Известная багофича: название мероприятия в списке категорий не совпадает с фактическим содержимым поста, это просто заглушки</p>
 						</div>
 					</div>
 
@@ -72,21 +86,11 @@
 						<div class="item-title">Великано</div>
 						</div></a></li>
 						<!-- http://27biletov.ru/wp-json/wp/v2/posts?filter[category_name]=platinum-arena -->
-
-						<li><a href="#" data-template="posts" data-context-name="about" class="item-link item-content">
-						<div class="item-inner"> 
-						<div class="item-title">About Me</div>
-						</div></a></li>
-
-						<li><a href="cars.html" data-context-name="cars" class="item-link item-content">
-						<div class="item-inner">
-						<div class="item-title">My Posts</div>
-						</div></a></li>
 						</ul>
 					</div>
 
 
-					<div class="list-block">
+<!-- 					<div class="list-block">
 					<ul>
 					<li><a href="#" data-template="about" data-context-name="about" class="item-link item-content">
 					<div class="item-inner"> 
@@ -105,7 +109,7 @@
 					<div class="item-title">Contacts</div>
 					</div></a></li>
 					</ul>
-					</div>
+					</div> -->
 					
 					<!--<div class="content-block-title">Side panels</div>
 					<div class="content-block">
