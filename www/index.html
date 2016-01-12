@@ -156,17 +156,7 @@ document.addEventListener("backbutton", onBackKeyDown, false);
 }
 // Handle the back button
 function onBackKeyDown() {
-	if(page.name=="home"){
-		e.preventDefault();
-		if(confirm("Do you want to Exit!"))
-			{
-			navigator.app.clearHistory();
-			navigator.app.exitApp();
-			}
-		}
-	else {
-		mainView.router.back();
-		}
+navigator.app.exitApp();
 	}
 </script>	
 
