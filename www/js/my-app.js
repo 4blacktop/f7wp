@@ -112,3 +112,7 @@ var mainView = myApp.addView('.view-main', {
     // Enable Dom Cache so we can use all inline pages
     domCache: true
 });
+
+$$('.alert-text-title').on('click', function () {
+    myApp.alert(mainView.activePage.name, 'Custom Title!');
+});
