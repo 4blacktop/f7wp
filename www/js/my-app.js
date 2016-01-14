@@ -113,6 +113,13 @@ var mainView = myApp.addView('.view-main', {
     domCache: true
 });
 
+// alert code
 $$('.alert-text-title').on('click', function () {
     myApp.alert(mainView.activePage.name, 'Custom Title!');
 });
+
+
+
+
+
+
