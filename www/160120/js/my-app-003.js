@@ -42,14 +42,17 @@ $$('.load-dynamic-page-category').on('click', function(){
 	mainView.loadContent(pageContent);
 	});
 });
-/* 
+
+
+
+
 // Click event on link to Post Page
 $$('.load-dynamic-page-post').on('click', function(){
 	alert( postid );
 	var postid = $$(this).attr('data-postid');
 	console.log( postid );
-	var postUrl = 'http://27biletov.ru/wp-json/wp/v2/posts/'+postid;
-	console.log( "postid:" + postid + "; postURL: " + postUrl);
+	// var postUrl = 'http://27biletov.ru/wp-json/wp/v2/posts/'+postid;
+	// console.log( "postid:" + postid + "; postURL: " + postUrl);
 	
 	// $$.getJSON(postUrl, function (json) {
 	// console.log( json );
@@ -57,25 +60,9 @@ $$('.load-dynamic-page-post').on('click', function(){
 	// console.log( pageContent );
 	// mainView.loadContent(pageContent);
 	// });
-});
- */
+})
  
-// Build details page
-$$('.load-dynamic-page-post').on('click', 'a.item-link', function (e) {
-	var postid = $$(this).attr('data-postid');
-	var postUrl = 'http://27biletov.ru/wp-json/wp/v2/posts/'+postid;
-	// console.log( postid );
-	console.log( "postid:" + postid + "; postURL: " + postUrl);
-	
-	
-	
-	$$.getJSON(postUrl, function (json) {
-	console.log( json );
-	var pageContent = myApp.postTemplate(json);
-	// console.log( pageContent );
-	mainView.loadContent(pageContent);
-	});
-});
+
 
 
 

@@ -55,7 +55,7 @@
 			</div>
 			 
 			<div class="page-content">
-				<div class="content-block-title">Привет! Это пре-альфа версия.</div>
+				<div class="content-block-title">Привет, Денис! Это пре-альфа версия.</div>
 
 				<div class="list-block">
 					<ul>
@@ -67,11 +67,6 @@
 					<li><a href="#" data-catid="7" class="item-link item-content load-dynamic-page-category">
 					<div class="item-inner"> 
 					<div class="item-title">Заимка/Ривьера</div>
-					</div></a></li>
-					
-					<li><a href="#" data-postid="140" class="item-link item-content load-dynamic-page-post">
-					<div class="item-inner"> 
-					<div class="item-title">140 пост</div>
 					</div></a></li>
 					</ul>
 					
@@ -120,7 +115,7 @@
 			  
 				<a href="#" data-postid="140" class="item-content item-link load-dynamic-page-post">
 				  <div class="item-inner">
-					<div class="item-title">{{id}} -> <!-- {{title.rendered}} {{date}} --></div>
+					<div class="item-title">id: {{id}} -> {{title.rendered}} {{date}}</div>
 				  </div>
 				</a>			  
 
@@ -135,18 +130,18 @@
 		
 <!-- Post Content Template -->
 <script type="text/template" id="post-page">
+<p><a href="#" class="alert-text-title">Alert With Text and Title</a></p>
 <div class="pages navbar-fixed toolbar-fixed">
 	<div data-page="post" class="page">
 		<div class="navbar">
 			<div class="navbar-inner">
 				<div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i></a></div>
-			<div class="center infotitle">{{title.rendered}}</div>
+			<div class="center">{{title.rendered}}</div>
 			</div>
 		</div>
 		
 		<div class="page-content hide-bars-on-scroll">
 		<div class="content-block">
-<p><a href="#" class="alert-text-title">Alert With Text and Title</a></p>
 			<div class="content-block-inner">
 			<h3>{{title.rendered}}</h3>
 			<p>{{content.rendered}}</p>
