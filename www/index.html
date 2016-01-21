@@ -74,11 +74,11 @@
 					<div class="item-title">140 пост</div>
 					</div></a></li>
 					</ul>
-					
 				</div>
 				
 				<div class="content-block">
 					<p><a href="#" class="alert-text-title">Alert With Text and Title</a></p>
+					<p><a href="#" class="debug-info">Debug Info</a></p>
 					<p><a href="#" class="open-panel">Открыть левую панель</a></p>
 					<div class="content-block-inner">
 					<p>Для рендеринга страниц работает шаблон-движок Template7. В настоящее время готовы:</p>
@@ -101,7 +101,7 @@
 <!-- List of Posts in Category Template -->
 <script type="text/template" id="category-page">
 <div class="pages navbar-fixed toolbar-fixed">
-	<div data-page="posts" class="page">
+	<div data-page="category" class="page">
 		<div class="navbar">
 			<div class="navbar-inner">
 				<div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i></a></div>
@@ -111,16 +111,16 @@
 		  
 		<div class="page-content">
 		<p><a href="#" class="alert-text-title">Alert With Text and Title</a></p>
-		  <div class="content-block-title">Посты</div>
+		<p><a href="#" class="debug-info">Debug Info</a></p>
+		  <div class="content-block-title">Posts</div>
 		  <div class="list-block">
 		  
-		  <p><a href="#" class="alert-text-title">Alert With Text and Title</a></p>
 			<ul>{{#each this}}
 			  <li>
 			  
-				<a href="#" data-postid="140" class="item-content item-link load-dynamic-page-post">
+				<a href="#" data-postid="{{id}}" class="item-content item-link load-dynamic-page-post">
 				  <div class="item-inner">
-					<div class="item-title">{{id}} -> <!-- {{title.rendered}} {{date}} --></div>
+					<div class="item-title">{{id}}. {{title.rendered}} {{date}}</div>
 				  </div>
 				</a>			  
 
@@ -147,6 +147,7 @@
 		<div class="page-content hide-bars-on-scroll">
 		<div class="content-block">
 <p><a href="#" class="alert-text-title">Alert With Text and Title</a></p>
+<p><a href="#" class="debug-info">Debug Info</a></p>
 			<div class="content-block-inner">
 			<h3>{{title.rendered}}</h3>
 			<p>{{content.rendered}}</p>
@@ -156,8 +157,6 @@
 	</div>
 </div>
 </script>			
-		
-	
 </div>
 </div>
 
