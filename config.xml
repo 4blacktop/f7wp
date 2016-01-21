@@ -80,6 +80,7 @@
   
 	<feature name="SocialSharing">
 	<param name="android-package" value="nl.xservices.plugins.SocialSharing" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	</feature>
 
 </widget>
