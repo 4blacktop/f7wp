@@ -133,6 +133,7 @@
 </div>
 </script>		
 		
+		<!-- <button onclick="window.plugins.socialsharing.share(null, null, null, 'http://www.x-services.nl')">link only</button> -->
 		
 <!-- Post Content Template -->
 <script type="text/template" id="post-page">
@@ -140,10 +141,14 @@
 	<div data-page="post" class="page">
 		<div class="navbar">
 			<div class="navbar-inner">
-				<div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i></a></div>
+				<div class="left"><a href="window.plugins.socialsharing.share(null, null, null, '{{link}}')" class="back link"> <i class="icon icon-back"></i></a></div>
 			<div class="center infotitle">{{title.rendered}}</div>
+				<div class="right"><a href="#" class="back link">share</div>
 			</div>
 		</div>
+		
+		
+
 		
 		<div class="page-content hide-bars-on-scroll">
 		<div class="content-block">
@@ -164,7 +169,7 @@
 
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="cordova_plugins.js"></script>
-
+<script type="text/javascript" src="js/SocialSharing.js"></script>
 
 
 

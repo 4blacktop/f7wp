@@ -76,4 +76,11 @@
     <allow-intent href="itms:*"/>
     <allow-intent href="itms-apps:*"/>
   </platform>
+  
+  
+	<feature name="SocialSharing">
+	<param name="android-package" value="nl.xservices.plugins.SocialSharing" />
+	</feature>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
 </widget>
