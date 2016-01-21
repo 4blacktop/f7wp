@@ -30,6 +30,7 @@ var mainView = myApp.addView('.view-main', {
 // When PhoneGap is loaded and talking with the native device,
 // it will call the event deviceready.
 document.addEventListener("deviceready", onDeviceReady, false);
+
 function onDeviceReady() { // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
 document.addEventListener("backbutton", onBackKeyDown, false); // Register the event listener
 }
@@ -44,14 +45,31 @@ $$('.alert-text-title').on('click', function () {
     myApp.alert(mainView.activePage.name, 'Home!');
 });
 
+/* $$('.demo-progressbar-infinite-multi-overlay .button').on('click', function () {
+    var container = $$('body');
+    if (container.children('.progressbar, .progressbar-infinite').length) return; //don't run all this if there is a current progressbar loading
+    myApp.showProgressbar(container, 'multi');
+    setTimeout(function () {
+        myApp.hideProgressbar();
+    }, 5000);
+}); */
+
 // Click event 1st home on link to Category List Page
 $$('.load-dynamic-page-category').on('click', function(){
 	var catid = $$(this).attr('data-catid');
 	var categoryUrl = 'http://27biletov.ru/wp-json/wp/v2/posts?filter[cat]='+catid;
 	console.log( "catid:" + catid + "; carURL: " + categoryUrl);
+	
+	var container = $$('body');
+    if (container.children('.progressbar, .progressbar-infinite').length) return; //don't run all this if there is a current progressbar loading
+    myApp.showProgressbar(container, 'multi');
+	
 	$$.getJSON(categoryUrl, function (json) {
 	console.log( json );
 	var pageContent = myApp.categoryTemplate(json);
+	
+	myApp.hideProgressbar();
+	
 	mainView.loadContent(pageContent);
 	});
 });
@@ -61,9 +79,17 @@ $$('.load-dynamic-page-post').on('click', function(){
 	var postid = $$(this).attr('data-postid');
 	var postUrl = 'http://27biletov.ru/wp-json/wp/v2/posts/'+postid;
 	console.log( "postid:" + postid + "; postURL: " + postUrl);
+	
+	var container = $$('body');
+    if (container.children('.progressbar, .progressbar-infinite').length) return; //don't run all this if there is a current progressbar loading
+    myApp.showProgressbar(container, 'multi');
+	
 	$$.getJSON(postUrl, function (json) {
 	console.log( json );
 	var pageContent = myApp.postTemplate(json);
+	
+	myApp.hideProgressbar();
+	
 	mainView.loadContent(pageContent);
 	});
 });
@@ -79,32 +105,47 @@ myApp.onPageInit('home',function(page){
 	});
 	
 	
+	
 	// Click event 1st home on link to Category List Page
 	$$('.load-dynamic-page-category').on('click', function(){
 		var catid = $$(this).attr('data-catid');
 		var categoryUrl = 'http://27biletov.ru/wp-json/wp/v2/posts?filter[cat]='+catid;
 		console.log( "catid:" + catid + "; carURL: " + categoryUrl);
+		
+		var container = $$('body');
+		if (container.children('.progressbar, .progressbar-infinite').length) return; //don't run all this if there is a current progressbar loading
+		myApp.showProgressbar(container, 'multi');
+		
 		$$.getJSON(categoryUrl, function (json) {
 		console.log( json );
 		var pageContent = myApp.categoryTemplate(json);
+		
+		myApp.hideProgressbar();
+		
 		mainView.loadContent(pageContent);
 		});
-	
-	
-	// Click event on link to Post Page
+	});
+
+
+	// Click event on link to Post Page 
 	$$('.load-dynamic-page-post').on('click', function(){
 		var postid = $$(this).attr('data-postid');
 		var postUrl = 'http://27biletov.ru/wp-json/wp/v2/posts/'+postid;
 		console.log( "postid:" + postid + "; postURL: " + postUrl);
+		
+		var container = $$('body');
+		if (container.children('.progressbar, .progressbar-infinite').length) return; //don't run all this if there is a current progressbar loading
+		myApp.showProgressbar(container, 'multi');
+		
 		$$.getJSON(postUrl, function (json) {
 		console.log( json );
 		var pageContent = myApp.postTemplate(json);
+		
+		myApp.hideProgressbar();
+		
 		mainView.loadContent(pageContent);
 		});
-	});	
-});
-
-
+	});
 });
 
 
@@ -117,17 +158,26 @@ myApp.onPageInit('category',function(page){
 	});
 	
 	
-	// Click event on link to Post Page
+	// Click event on link to Post Page 
 	$$('.load-dynamic-page-post').on('click', function(){
 		var postid = $$(this).attr('data-postid');
 		var postUrl = 'http://27biletov.ru/wp-json/wp/v2/posts/'+postid;
 		console.log( "postid:" + postid + "; postURL: " + postUrl);
+		
+		var container = $$('body');
+		if (container.children('.progressbar, .progressbar-infinite').length) return; //don't run all this if there is a current progressbar loading
+		myApp.showProgressbar(container, 'multi');
+		
 		$$.getJSON(postUrl, function (json) {
 		console.log( json );
 		var pageContent = myApp.postTemplate(json);
+		
+		myApp.hideProgressbar();
+		
 		mainView.loadContent(pageContent);
 		});
 	});
+	
 });
 
 
