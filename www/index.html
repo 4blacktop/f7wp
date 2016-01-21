@@ -51,11 +51,12 @@
 			<div class="navbar">
 				<div class="navbar-inner">
 					<div class="left"><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a></div>
-				<div class="center">F7WP Application</div>
-					<div class="right"><a href="window.plugins.socialsharing.share(null, null, null, 'http://www.x-services.nl')" > <i class="icon icon-share"></i></a></div>
+				<div class="center">Title</div>
+					<!--<div class="right"><a href="window.plugins.socialsharing.share(null, null, null, 'http://www.x-services.nl')" > <i class="icon icon-share"></i></a></div>
 					<div class="right icon"><a href="window.plugins.socialsharing.share(null, null, null, 'http://www.x-services.nl')" > <i class="icon icon-share"></i></a></div>
 					<div class="right icon"><a href="window.plugins.socialsharing.share(null, null, null, 'http://www.x-services.nl')" class="link"> <i class="icon icon-share"></i></a></div>
-					<!-- <div class="right icon"><a href="window.plugins.socialsharing.share(null, null, null, 'http://www.x-services.nl')" class="link external"> <i class="icon icon-share"></i></a></div> -->
+					 <div class="right icon"><a href="window.plugins.socialsharing.share(null, null, null, 'http://www.x-services.nl')" class="link external"> <i class="icon icon-share"></i></a></div> -->
+					 <div class="right icon"><i class="icon icon-share" onclick="window.plugins.socialsharing.share('Message only', 'The subject', null, 'http://www.x-services.nl')"></i></div> 
 				</div>
 			</div>
 			 
@@ -84,7 +85,7 @@
 				<div class="content-block">
 <button onclick="window.plugins.socialsharing.share('Message only')">message only</button>
 <button onclick="window.plugins.socialsharing.share('Message and subject', 'The subject')">message and subject</button>
-<button onclick="window.plugins.socialsharing.share(null, null, null, 'http://www.x-services.nl')">link only</button>
+<button onclick="window.plugins.socialsharing.share('Message only', 'The subject', null, 'http://www.x-services.nl')">link only</button>
 					<p><a href="#" class="alert-text-title">Alert With Text and Title</a></p>
 					<p><a href="#" class="open-panel">Открыть левую панель</a></p>
 					<div class="content-block-inner">
@@ -148,8 +149,7 @@
 				<div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i></a></div>
 			<div class="center infotitle">{{title.rendered}}</div>
 				<!-- <div class="right icon"><a href="window.plugins.socialsharing.share(null, null, null, '{{link}}')" class="link external"> <i class="icon icon-share"></i></a></div> -->
-				<div class="right icon"><a href="window.plugins.socialsharing.share(null, null, null, 'http://www.x-services.nl')" class="link external"> <i class="icon icon-share"></i></a></div>
-			
+			<div class="right icon"><i class="icon icon-share" onclick="window.plugins.socialsharing.share('Message only', 'The subject', null, '{{link}}')"></i></div>
 			</div>
 		</div>
 		
