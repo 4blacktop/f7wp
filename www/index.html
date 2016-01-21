@@ -28,8 +28,9 @@
 	<div class="content-block">
 	  <p>Список категорий:</p>
       <!-- Click on link with "close-panel" class will close panel -->
-      <p><a href="category.html" data-context-name="platinumarena" class="close-panel">Платинум Арена</a></p>
-      <p><a href="category.html" data-context-name="velicano" class="close-panel">Великано</a></p>
+      <p><a href="#" data-catid="3" class="close-panel item-link item-content load-dynamic-page-category">Великано</a></p>
+      <p><a href="#" data-catid="7" class="close-panel item-link item-content load-dynamic-page-category">Заимка/Ривьера</a></p>
+      <p><a href="#" data-postid="140" class="close-panel item-link item-content load-dynamic-page-post">140 пост</a></p>
 
 	  <br />
       <p><a href="#" class="close-panel">Просто закрыть панель</a></p>
@@ -51,11 +52,11 @@
 				<div class="navbar-inner">
 					<div class="left"><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a></div>
 				<div class="center">F7WP Application</div>
+					<div class="right icon"><i class="icon icon-whatsapp"></i></div>
 				</div>
 			</div>
 			 
 			<div class="page-content">
-			<p class="demo-progressbar-infinite-multi-overlay"><a href="#" class="button button-raised">Start Loading</a></p>
 				<div class="content-block-title">Привет! Это пре-альфа версия.</div>
 
 				<div class="list-block">
@@ -80,7 +81,6 @@
 				<div class="content-block">
 				<button onclick="window.plugins.socialsharing.share('Message only')">message only</button>
 					<p><a href="#" class="alert-text-title">Alert With Text and Title</a></p>
-					<p><a href="#" class="debug-info">Debug Info</a></p>
 					<p><a href="#" class="open-panel">Открыть левую панель</a></p>
 					<div class="content-block-inner">
 					<p>Для рендеринга страниц работает шаблон-движок Template7. В настоящее время готовы:</p>
@@ -107,14 +107,13 @@
 		<div class="navbar">
 			<div class="navbar-inner">
 				<div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i></a></div>
-			<div class="center">Posts</div>
+			<div class="center">Статьи</div>
 			</div>
 		</div>
 		  
 		<div class="page-content">
 		<p><a href="#" class="alert-text-title">Alert With Text and Title</a></p>
-		<p><a href="#" class="debug-info">Debug Info</a></p>
-		  <div class="content-block-title">Posts</div>
+		  <div class="content-block-title">Статьи</div>
 		  <div class="list-block">
 		  
 			<ul>{{#each this}}
@@ -134,7 +133,6 @@
 </div>
 </script>		
 		
-				<!-- <div class="right icon"><a href="window.plugins.socialsharing.share(null, null, null, '{{http://www.x-services.nl}}')" class="link external">Share</div> -->
 		
 <!-- Post Content Template -->
 <script type="text/template" id="post-page">
@@ -144,8 +142,8 @@
 			<div class="navbar-inner">
 				<div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i></a></div>
 			<div class="center infotitle">{{title.rendered}}</div>
+				<div class="right icon"><a href="window.plugins.socialsharing.share(null, null, null, '{{link}}')" class="link external"> <i class="icon icon-share"></i></a></div>
 			
-
 			</div>
 		</div>
 		
@@ -155,7 +153,6 @@
 		<div class="content-block">
 		
 <p><a href="#" class="alert-text-title">Alert With Text and Title</a></p>
-<p><a href="#" class="debug-info">Debug Info</a></p>
 			<div class="content-block-inner">
 			<h3>{{title.rendered}}</h3>
 			<p>{{content.rendered}}</p>
