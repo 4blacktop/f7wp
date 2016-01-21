@@ -133,6 +133,7 @@
 </div>
 </script>		
 		
+				<!-- <div class="right icon"><a href="window.plugins.socialsharing.share(null, null, null, '{{http://www.x-services.nl}}')" class="link external">Share</div> -->
 		
 <!-- Post Content Template -->
 <script type="text/template" id="post-page">
@@ -142,7 +143,8 @@
 			<div class="navbar-inner">
 				<div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i></a></div>
 			<div class="center infotitle">{{title.rendered}}</div>
-				<div class="right icon"><a href="window.plugins.socialsharing.share(null, null, null, '{{link}}')" class="link external">Share</div>
+			
+			
 			</div>
 		</div>
 		
@@ -150,6 +152,7 @@
 		
 		<div class="page-content hide-bars-on-scroll">
 		<div class="content-block">
+		<button onclick="window.plugins.socialsharing.share('Message only')">message only</button>
 <p><a href="#" class="alert-text-title">Alert With Text and Title</a></p>
 <p><a href="#" class="debug-info">Debug Info</a></p>
 			<div class="content-block-inner">
