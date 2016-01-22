@@ -42,11 +42,12 @@ function onBackKeyDown() { // Handle the back button
 function onMenuKeyDown() { // Handle the back button
 	if ($$('body').hasClass('with-panel-left-cover')) {
 		console.log('Left Panel is opened');
-		myApp.openPanel(left)
-	}
-	else {
+		myApp.openPanel(left);
+		}
+	else { 
 		console.log('Left Panel is closed');
-		myApp.closePanel()}
+		myApp.closePanel();
+		}
 	}	
 
 
