@@ -35,11 +35,15 @@ function onDeviceReady() { // PhoneGap is loaded and it is now safe to make call
 document.addEventListener("backbutton", onBackKeyDown, false); // Register the event listener backButton
 document.addEventListener("menubutton", onMenuKeyDown, false); // Register the event listener menuButton
 }
+
 function onBackKeyDown() { // Handle the back button
 	if(mainView.activePage.name == "home"){ navigator.app.exitApp(); }
 	else { mainView.router.back(); }
 	}
-function onMenuKeyDown() { // Handle the back button
+	
+function onMenuKeyDown() { // Handle the mnu button
+	myApp.openPanel(left);
+/* 
 	if ($$('body').hasClass('with-panel-left-cover')) {
 		console.log('Left Panel is opened');
 		myApp.openPanel(left);
@@ -48,6 +52,7 @@ function onMenuKeyDown() { // Handle the back button
 		console.log('Left Panel is closed');
 		myApp.closePanel();
 		}
+		 */
 	}	
 
 
