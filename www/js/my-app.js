@@ -32,16 +32,17 @@ var mainView = myApp.addView('.view-main', {
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() { // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
-document.addEventListener("backbutton", onBackKeyDown, false); // Register the event listener backButton
-document.addEventListener("menubutton", onMenuKeyDown, false); // Register the event listener menuButton
+	document.addEventListener("menubutton", onMenuKeyDown, false); // Register the event listener menuButton
+	document.addEventListener("backbutton", onBackKeyDown, false); // Register the event listener backButton
 }
 
 function onBackKeyDown() { // Handle the back button
 	if(mainView.activePage.name == "home"){ navigator.app.exitApp(); }
 	else { mainView.router.back(); }
-	}
+}
 	
 function onMenuKeyDown() { // Handle the mnu button
+alert ( "menubutton" );
 	myApp.openPanel(left);
 /* 
 	if ($$('body').hasClass('with-panel-left-cover')) {
@@ -53,7 +54,7 @@ function onMenuKeyDown() { // Handle the mnu button
 		myApp.closePanel();
 		}
 		 */
-	}	
+}	
 
 
 // alert code 1st home  ====================================
