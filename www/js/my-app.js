@@ -1,7 +1,6 @@
 // Initialize your app
 var myApp = new Framework7({
     // animateNavBackIcon:true,//ios only
-	
     swipePanel: 'left',
 	pushstate: true, // for h/w back button support MAYBE! KOSTYL
 	swipePanelActiveArea: 50,
@@ -32,7 +31,6 @@ var mainView = myApp.addView('.view-main', {
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() { // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
-	document.addEventListener("menubutton", onMenuKeyDown, false); // Register the event listener menuButton
 	document.addEventListener("backbutton", onBackKeyDown, false); // Register the event listener backButton
 }
 
@@ -40,21 +38,6 @@ function onBackKeyDown() { // Handle the back button
 	if(mainView.activePage.name == "home"){ navigator.app.exitApp(); }
 	else { mainView.router.back(); }
 }
-	
-function onMenuKeyDown() { // Handle the mnu button
-alert ( "menubutton" );
-	myApp.openPanel(left);
-/* 
-	if ($$('body').hasClass('with-panel-left-cover')) {
-		console.log('Left Panel is opened');
-		myApp.openPanel(left);
-		}
-	else { 
-		console.log('Left Panel is closed');
-		myApp.closePanel();
-		}
-		 */
-}	
 
 
 // alert code 1st home  ====================================
@@ -116,7 +99,6 @@ $$('.load-dynamic-page-post').on('click', function(){
 
 // Initializing Home Page ====================================
 myApp.onPageInit('home',function(page){
-	// alert
 	$$(page.container).on('click','.alert-text-title',function(){
 		myApp.alert(mainView.activePage.name, 'Home!');
 	});
@@ -169,7 +151,6 @@ myApp.onPageInit('home',function(page){
 
 // Initializing Category Page ====================================
 myApp.onPageInit('category',function(page){
-	// alert
 	$$(page.container).on('click','.alert-text-title',function(){
 		myApp.alert(mainView.activePage.name, 'Category!');
 	});
@@ -200,19 +181,34 @@ myApp.onPageInit('category',function(page){
 
 // Initializing Post Page
 myApp.onPageInit('post',function(page){
-	// alert
 	$$(page.container).on('click','.alert-text-title',function(){
 		myApp.alert(mainView.activePage.name, 'Post!');
 	});
 	
-	// debug-info
-	// $$('.debug-info').on('click', function(){
-		// console.log( mainView.activePage.name);
-	// });
 });
 
 
 
 
+	// debug-info
+	// $$('.debug-info').on('click', function(){
+		// console.log( mainView.activePage.name);
+	// });
 
 
+/* 
+// not working!!!	
+// document.addEventListener("menubutton", onMenuKeyDown, false); // Register the event listener menuButton
+function onMenuKeyDown() { // Handle the mnu button
+alert ( "menubutton" );
+	myApp.openPanel(left);
+	if ($$('body').hasClass('with-panel-left-cover')) {
+		console.log('Left Panel is opened');
+		myApp.openPanel(left);
+		}
+	else { 
+		console.log('Left Panel is closed');
+		myApp.closePanel();
+		}
+}	
+ */

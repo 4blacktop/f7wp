@@ -52,13 +52,21 @@
 			<div class="navbar">
 				<div class="navbar-inner">
 					<div class="left"><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a></div>
-				<div class="center">Title</div>
-					 <div class="right icon"><a class="link icon-only" onclick="window.plugins.socialsharing.share(null, null, null,  'http://27biletov.ru')" href="#" > <i class="icon icon-share" > </i></a></div> 
+					<div class="center">Title</div>
+					<div class="right icon">
+						<a class="link icon-only" onclick="window.plugins.socialsharing.share(null, null, null,  'http://27biletov.ru')" href="#" > <i class="icon icon-share" > </i></a> 
+						<a class="link icon-only" onclick="window.location.href = 'tel: numberHere'; " href="#" > <i class="icon icon-phonecall" > </i></a>
+					</div>				
 				</div>
 			</div>
 			 
 			<div class="page-content">
-				<div class="content-block-title">Привет! Это пре-альфа версия.</div>
+				<div class="content-block-title">Привет! Это пре-альфа версия.
+				
+				<br />
+				
+				
+				</div>
 
 				<div class="list-block">
 					<ul>
@@ -106,8 +114,12 @@
 	<div data-page="category" class="page">
 		<div class="navbar">
 			<div class="navbar-inner">
-				<div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i></a></div>
-			<div class="center">Статьи</div>
+					<div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i></a></div>
+					<div class="center">Статьи</div>
+					<div class="right icon">
+						<a class="link icon-only" onclick="window.plugins.socialsharing.share(null, null, null,  '{{link}}')" href="#" > <i class="icon icon-share" > </i></a> 
+						<a class="link icon-only" onclick="window.location.href = 'tel: numberHere'; " href="#" > <i class="icon icon-phonecall" > </i></a>
+					</div>	
 			</div>
 		</div>
 		  
@@ -141,9 +153,11 @@
 		<div class="navbar">
 			<div class="navbar-inner">
 				<div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i></a></div>
-			<div class="center infotitle">{{title.rendered}}</div>
-				<div class="right icon"><a class="link icon-only" onclick="window.plugins.socialsharing.share(null, null, null,  '{{link}}')" href="#" > <i class="icon icon-share" > </i></a></div>
-			<!-- <div class="right icon"><i class="icon icon-share" onclick="window.plugins.socialsharing.share(null, null, null, '{{link}}')"></i></div> -->
+				<div class="center infotitle">{{title.rendered}}</div>
+				<div class="right icon">
+					<a class="link icon-only" onclick="window.plugins.socialsharing.share(null, null, null,  '{{link}}')" href="#" > <i class="icon icon-share" > </i></a> 
+					<a class="link icon-only" onclick="window.location.href = 'tel: numberHere'; " href="#" > <i class="icon icon-phonecall" > </i></a>
+				</div>	
 			</div>
 		</div>
 		
