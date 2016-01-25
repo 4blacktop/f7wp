@@ -54,6 +54,12 @@ $$('.alert-text-title').on('click', function () {
     }, 5000);
 }); */
 
+
+
+
+
+
+
 // Click event 1st home on link to Category List Page
 $$('.load-dynamic-page-category').on('click', function(){
 	var catid = $$(this).attr('data-catid');
@@ -93,6 +99,12 @@ $$('.load-dynamic-page-post').on('click', function(){
 	mainView.loadContent(pageContent);
 	});
 });
+
+
+
+
+
+
 
 
 
@@ -149,6 +161,16 @@ myApp.onPageInit('home',function(page){
 
 
 
+
+
+
+
+
+
+
+
+
+
 // Initializing Category Page ====================================
 myApp.onPageInit('category',function(page){
 	$$(page.container).on('click','.alert-text-title',function(){
@@ -179,7 +201,11 @@ myApp.onPageInit('category',function(page){
 });
 
 
-// Initializing Post Page
+
+
+
+
+// Initializing Post Page ====================================
 myApp.onPageInit('post',function(page){
 	$$(page.container).on('click','.alert-text-title',function(){
 		myApp.alert(mainView.activePage.name, 'Post!');

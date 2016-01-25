@@ -25,9 +25,89 @@
 
 <!-- Left panel with cover effect-->
 <div class="panel panel-left panel-cover">
-	<div class="content-block">
-	  <p>Список категорий:</p>
+	<div class="list-block">
+	
+		<div class="list-group">
+		
+
+			<ul>
+				<a href="index.html" class="back close-panel" data-force="true">
+				<li class="item-content list-panel-all close-panel item-link">
+				<div class="item-media"><i class="icon icon-home-black"></i></div>
+					<div class="item-inner">
+						<div class="item-title">На главную</div>
+					</div>
+				</li>
+				</a>
+					
+				<a href="#" data-catid="3" class="load-dynamic-page-category">
+				<li class="item-content list-panel-all close-panel item-link">
+				<div class="item-media"><i class="icon icon-folder-open-black"></i></div>
+					<div class="item-inner">
+						<div class="item-title">Великано</div>
+					</div>
+				</li>
+				</a>
+								
+				<a href="#" data-catid="7" class="load-dynamic-page-category">
+				<li class="item-content list-panel-all close-panel item-link">
+				<div class="item-media"><i class="icon icon-folder-open-black"></i></div>
+					<div class="item-inner">
+						<div class="item-title">Заимка/Ривьера</div>
+					</div>
+				</li>
+				</a>
+				
+				
+				
+												
+				<a href="#" data-postid="140" class="load-dynamic-page-post">
+				<li class="item-content list-panel-all close-panel item-link">
+				<div class="item-media"><i class="icon icon-link-black"></i></div>
+					<div class="item-inner">
+						<div class="item-title">Пост 140</div>
+					</div>
+				</li>
+				</a>
+				
+				
+				
+				
+				
+				<a href="#">
+				<li class="item-content list-panel-favorites close-panel item-link">
+				<div class="item-media"><i class="icon icon-folder-special-black"></i></div>
+					<div class="item-inner">
+						<div class="item-title">Избранное</div>
+					</div>
+				</li>
+				</a>
+				
+						
+				<a href="#">
+				<li class="item-content close-panel">
+				<div class="item-media"><i class="icon icon-close-black"></i></div>
+					<div class="item-inner">
+						<div class="item-title">Закрыть панель</div>
+					</div>
+				</li>
+				</a>
+				
+				
+				
+			</ul>
+		</div>
+	
+	
+	
+	
+	
+
+	
+	
+	
       <!-- Click on link with "close-panel" class will close panel -->
+	 <!-- 	 <p>Список категорий:</p>
       <p><a href="index.html" class="back close-panel" data-force="true">На главную</a></p>
       <p><a href="#" data-catid="3" class="close-panel item-link item-content load-dynamic-page-category">Великано</a></p>
       <p><a href="#" data-catid="7" class="close-panel item-link item-content load-dynamic-page-category">Заимка/Ривьера</a></p>
@@ -35,7 +115,7 @@
 
 	  <br />
       <p><a href="#" class="close-panel">Просто закрыть панель</a></p>
-	
+	 -->
 
 		<!-- http://27biletov.ru/wp-json/wp/v2/posts?filter[category_name]=platinum-arena -->
 	</div>
@@ -115,9 +195,9 @@
 		<div class="navbar">
 			<div class="navbar-inner">
 					<div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i></a></div>
-					<div class="center">Статьи</div>
+					<!-- <div class="center">Статьи</div> -->
 					<div class="right icon">
-						<a class="link icon-only" onclick="window.plugins.socialsharing.share(null, null, null,  '{{link}}')" href="#" > <i class="icon icon-share" > </i></a> 
+						<!-- <a class="link icon-only" onclick="window.plugins.socialsharing.share(null, null, null,  '{{link}}')" href="#" > <i class="icon icon-share" > </i></a>  -->
 						<a class="link icon-only" onclick="window.location.href = 'tel: numberHere'; " href="#" > <i class="icon icon-phonecall" > </i></a>
 					</div>	
 			</div>
@@ -153,9 +233,10 @@
 		<div class="navbar">
 			<div class="navbar-inner">
 				<div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i></a></div>
-				<div class="center infotitle">{{title.rendered}}</div>
+				<!-- <div class="center infotitle">{{title.rendered}}</div> -->
 				<div class="right icon">
-					<a class="link icon-only" onclick="window.plugins.socialsharing.share(null, null, null,  '{{link}}')" href="#" > <i class="icon icon-share" > </i></a> 
+					<a class="link icon-only" href="#" > <i class="icon icon-star-white" > </i></a>
+ 					<a class="link icon-only" onclick="window.plugins.socialsharing.share(null, null, null,  '{{link}}')" href="#" > <i class="icon icon-share" > </i></a> 
 					<a class="link icon-only" onclick="window.location.href = 'tel: numberHere'; " href="#" > <i class="icon icon-phonecall" > </i></a>
 				</div>	
 			</div>
