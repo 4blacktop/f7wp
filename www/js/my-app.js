@@ -12,6 +12,19 @@ var myApp = new Framework7({
 // Export selectors engine
 var $$ = Dom7;
 
+// Ajax timeout
+$$.ajaxSetup({
+   timeout: 9000, // 5 seconds
+   error: function(xhr) {
+		myApp.hideProgressbar();
+         var status = xhr.status;
+         myApp.alert( "Проверьте подключение к Интернету" , 'Ошибка сети', function () {
+            $$(".back").click();
+            });
+         
+        }
+});
+
 // Templates using Template7 template engine
 // myApp.homeTemplate = Template7.compile($$('#home-page').html()); // home page loads by default and looks like static
 myApp.categoryTemplate = Template7.compile($$('#category-page').html());
