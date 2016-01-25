@@ -64,3 +64,50 @@ i.icon.icon-star-white {
   height: 24px;
  	background-image: url("../img/ic_star_white_24px.svg"); 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+i.icon.icon-msg-instagram {
+  width: 24px;
+  height: 24px;
+ 	background-image: url("../img/msg-instagram.svg"); 
+}
+
+i.icon.icon-msg-skype {
+  width: 24px;
+  height: 24px;
+ 	background-image: url("../img/msg-skype.svg"); 
+}
+
+i.icon.icon-msg-telegram {
+  width: 24px;
+  height: 24px;
+ 	background-image: url("../img/msg-telegram"); 
+}
+
+i.icon.icon-msg-viber {
+  width: 24px;
+  height: 24px;
+ 	background-image: url("../img/msg-viber.svg"); 
+}
+
+i.icon.icon-msg-whatsapp {
+  width: 24px;
+  height: 24px;
+ 	background-image: url("../img/msg-whatsapp.svg"); 
+}
+
