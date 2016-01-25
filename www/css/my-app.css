@@ -96,7 +96,13 @@ i.icon.icon-msg-skype {
 i.icon.icon-msg-telegram {
   width: 24px;
   height: 24px;
- 	background-image: url("../img/msg-telegram"); 
+ 	background-image: url("../img/msg-telegram.svg"); 
+}
+
+i.icon.icon-msg-telegram-un {
+  width: 24px;
+  height: 24px;
+ 	background-image: url("../img/msg-telegram-un.svg"); 
 }
 
 i.icon.icon-msg-viber {
