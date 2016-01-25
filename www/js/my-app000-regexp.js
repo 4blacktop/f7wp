@@ -95,10 +95,31 @@ $$('.load-dynamic-page-post').on('click', function(){
 	// var pageContent = myApp.postTemplate(json);
 	
 	
-	$$.getJSON(postUrl, function (json) {
-	var stringified = JSON.stringify(json).replace( /<div role=\\\"form\\\"[\s\S]*wpcf7-display-none\\\"><\/div><\/form><\/div>/gm, "" );
-	var noform = JSON.parse(stringified);
-	var pageContent = myApp.postTemplate(noform);
+		$$.getJSON(postUrl, function (json) {
+		// var noform = json.replace( /<div role=\"form\"[\s\S]*wpcf7-display-none\"><\/div><\/form><\/div>/g, "" );
+		// console.log( json );
+		
+		// var noform = json.replace( "140", "144" );
+		// var stringified = JSON.stringify(json);
+		// stringified = stringified.replace( /<div role=\"form\"[\s\S]*wpcf7-display-none\"><\/div><\/form><\/div>/g, "" );
+		// stringified = stringified.replace( /<div role[\s\S]*wpcf7-display-none\"><\/div><\/form><\/div>/gm, "" );
+		
+		// stringified = stringified.replace( /<div role[\s\S]*<\/form><\/div>/gm, "" );
+		
+		// var stringified = JSON.stringify(json).replace( /<div role[\s\S]*<\/form><\/div>/gm, "" );
+		// var stringified = JSON.stringify(json).replace( /<div role=\\\"form\\\"[\s\S]*<\/form><\/div>/gm, "" );
+		// var stringified = JSON.stringify(json).replace( /<div role=\\\"form\\\"[\s\S]*<\/form><\/div>/gm, "" );
+		// var stringified = JSON.stringify(json).replace( /<div role=\\\"form\\\"[\s\S]*wpcf7-display-none\"><\/div><\/form><\/div>/gm, "" );
+		// var stringified = JSON.stringify(json).replace( /<div role=\\\"form\\\"[\s\S]*<\/div><\/form><\/div>/gm, "" );
+		var stringified = JSON.stringify(json).replace( /<div role=\\\"form\\\"[\s\S]*wpcf7-display-none\\\"><\/div><\/form><\/div>/gm, "" );
+		
+		
+		
+		console.log( stringified );
+		var noform = JSON.parse(stringified);
+		
+		// alert( noform );	
+		var pageContent = myApp.postTemplate(noform);
 	
 	myApp.hideProgressbar();
 	
@@ -154,10 +175,14 @@ myApp.onPageInit('home',function(page){
 		if (container.children('.progressbar, .progressbar-infinite').length) return; //don't run all this if there is a current progressbar loading
 		myApp.showProgressbar(container, 'multi');
 		
-	$$.getJSON(postUrl, function (json) {
-	var stringified = JSON.stringify(json).replace( /<div role=\\\"form\\\"[\s\S]*wpcf7-display-none\\\"><\/div><\/form><\/div>/gm, "" );
-	var noform = JSON.parse(stringified);
-	var pageContent = myApp.postTemplate(noform);
+		$$.getJSON(postUrl, function (json) {
+			
+		var noform = json.replace( /<div role=\"form\"[\s\S]*wpcf7-display-none\"><\/div><\/form><\/div>/g, "" )
+		// console.log( json );
+		// console.log( noform );
+		// alert( noform );	
+			
+		var pageContent = myApp.postTemplate(noform);
 		
 		myApp.hideProgressbar();
 		
@@ -195,10 +220,14 @@ myApp.onPageInit('category',function(page){
 		if (container.children('.progressbar, .progressbar-infinite').length) return; //don't run all this if there is a current progressbar loading
 		myApp.showProgressbar(container, 'multi');
 		
-	$$.getJSON(postUrl, function (json) {
-	var stringified = JSON.stringify(json).replace( /<div role=\\\"form\\\"[\s\S]*wpcf7-display-none\\\"><\/div><\/form><\/div>/gm, "" );
-	var noform = JSON.parse(stringified);
-	var pageContent = myApp.postTemplate(noform);
+		$$.getJSON(postUrl, function (json) {
+			
+		var noform = json.replace( /<div role=\"form\"[\s\S]*wpcf7-display-none\"><\/div><\/form><\/div>/g, "" )
+		// console.log( json );
+		// console.log( noform );
+		// alert( noform );	
+			
+		var pageContent = myApp.postTemplate(noform);
 		
 		myApp.hideProgressbar();
 		
