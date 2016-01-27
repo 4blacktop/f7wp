@@ -2,7 +2,7 @@
 var myApp = new Framework7({
     // animateNavBackIcon:true,//ios only
     swipePanel: 'left',
-	pushstate: true, // for h/w back button support MAYBE! KOSTYL
+	// pushstate: true, // for h/w back button support MAYBE! KOSTYL
 	swipePanelActiveArea: 50,
 	material: true, //enable Material theme
 	allowDuplicateUrls: true, // allow loading of new pages that have same url as currently "active" page in View
@@ -18,7 +18,7 @@ var $$ = Dom7;
 
 // Ajax timeout
 $$.ajaxSetup({
-	crossDomain: true, 
+	crossDomain: true, // don't know if it's working for CORS properly, on localhost - CORS failed during ajax form submit, regular submit ok
    timeout: 9000, // 5 seconds
    error: function(xhr) {
 		myApp.hideProgressbar();
@@ -304,13 +304,16 @@ myApp.onPageInit('buyform',function(page){
 
 	// ajax form submit error processing
 	$$('form.ajax-submit').on('submitted', function (e) {
-	 myApp.alert('Form submitted')
-	 console.log(e.detail.data);
+	 myApp.alert('Спасибо! Ваша заявка уже обрабатывается операторами.');
+	 // mainView.router.loadPage("thanks.html"); // redirect to Thanks page
+	 mainView.router.back({url: 'index.html', force: true});
+	 // console.log(e.detail.data);
 	});
 			
 	$$('form.ajax-submit').on('submitError', function (e) {
-	 myApp.alert('Form submitError')
-	 console.log(e.detail.data);
+	 myApp.alert('Ошибка отправки формы. Сообщите, пожалуйста, нажав иконку телефона на главной странице. Спасибо.');
+	 mainView.router.back({url: 'index.html', force: true});
+	 // console.log(e.detail.data);
 	});
 	
 	//confirm dialog on buyform page
