@@ -5,7 +5,7 @@
 	<div class="navbar">
 		<div class="navbar-inner">
 			<div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i></a></div>
-			<!-- <div class="center">Заказ</div> -->
+			<div class="center">Title</div>
 			<div class="right icon">
 				<a class="link icon-only" onclick="window.location.href = 'tel: 999999'; " href="#" > <i class="icon icon-phonecall" > </i></a>
 			</div>				
@@ -13,11 +13,13 @@
 	</div>
 		 
 	<div class="page-content">
-<!-- 		<div class="content-block-title">
-			<h3>Пожалуйста, заполните все поля:</h3>
-		</div>	 -->
+		<div class="content-block-title">
+			<h1>Заказ билета онлайн</h1>
+		</div>	
 		
 		<div class="content-block">
+		<p>Стоимость, количество билетов, адрес и удобное Вам время доставки уточнит оператор</p>
+		<p>Пожалуйста, заполните:</p>
 	
 		<form id="buyformid" class="ajax-submit list-block store-data" method="POST" action="http://27biletov.ru/buyform.php">
 		<div class="list-block inputs-list">
@@ -63,16 +65,17 @@
 			<input name="inputtitle" id="inputtitle" type="hidden" placeholder=""/>
 			
 			<!-- <input type="submit" value="Отправить" class="button">  -->
+			
 			<!-- <input type="submit" value="Тест отправить" class="confirm-title-ok-cancel button button-big button-fill color-green">  -->
 		</ul>
 		  
-		<p>Стоимость, количество билетов, адрес и удобное Вам время доставки уточнит оператор.</p>
 			<div class="rowsubmit">
 				<p class="buttons-row"><a href="#" id="btnsubmit" class="confirm-title-ok-cancel button button-big button-fill color-green">Заказать билет</a></p>
 			</div>
 			
 		</div>
 		</form>
+
 		</div>
 	</div>
 	
