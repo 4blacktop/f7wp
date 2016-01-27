@@ -6,7 +6,11 @@ var myApp = new Framework7({
 	swipePanelActiveArea: 50,
 	material: true, //enable Material theme
 	allowDuplicateUrls: true, // allow loading of new pages that have same url as currently "active" page in View
-	modalTitle: 'F7WP'
+	modalTitle: '27 билетов',
+	modalButtonOk: 'Да',
+	modalButtonCancel: 'Нет',
+	
+	
 });
 	
 // Export selectors engine
@@ -24,6 +28,7 @@ $$.ajaxSetup({
          
         }
 });
+
 
 // Templates using Template7 template engine
 // myApp.homeTemplate = Template7.compile($$('#home-page').html()); // home page loads by default and looks like static
@@ -228,34 +233,85 @@ myApp.onPageInit('category',function(page){
 
 // Initializing Post Page ====================================
 myApp.onPageInit('post',function(page){
+	// console.log( $$(page));
+	// console.log( page);
+	
 	$$(page.container).on('click','.alert-text-title',function(){
 		myApp.alert(mainView.activePage.name, 'Post!');
 	});
 	
+/* 	window.onscroll = function(ev) {
+		if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+			// you're at the bottom of the page
+			alert("you're at the bottom of the page");
+		}
+	}; */
 });
 
 
 
 
-	// debug-info
-	// $$('.debug-info').on('click', function(){
-		// console.log( mainView.activePage.name);
-	// });
-
-
 /* 
-// not working!!!	
-// document.addEventListener("menubutton", onMenuKeyDown, false); // Register the event listener menuButton
-function onMenuKeyDown() { // Handle the mnu button
-alert ( "menubutton" );
-	myApp.openPanel(left);
-	if ($$('body').hasClass('with-panel-left-cover')) {
-		console.log('Left Panel is opened');
-		myApp.openPanel(left);
-		}
-	else { 
-		console.log('Left Panel is closed');
-		myApp.closePanel();
-		}
-}	
+																				<a href="detail.html?id=1234">
+
+																				$$(document).on('pageInit', function(e) {
+																				   var page = e.detail.page;
+																				   // if your page has data-page="detail" attribute
+																				   if (page.name === 'detail') {
+																					  var id = page.query.id;
+																					  // do something here with id...
+																				   }
+																				});	
  */
+
+
+
+
+
+
+
+
+// Initializing Buyform Page ====================================
+myApp.onPageInit('buyform',function(page){
+	var linkurl = page.query.linkurl;
+	var linktitle = page.query.linktitle;
+	document.getElementById("inputurl").value = linkurl;
+	document.getElementById("inputtitle").value = linktitle;
+	console.log( 'linkurl: ' + linkurl);
+	console.log( 'linktitle: ' + linktitle);
+	
+	//confirm dialog on buyform page
+	$$('.confirm-title-ok-cancel').on('click', function () {
+		var idName = document.getElementById('name').value;
+		var idTel = document.getElementById('tel').value;
+		// myApp.confirm(idTel, 'Проверьте, верен ли Ваш номер телефона?', 
+		myApp.confirm(idTel, idName + ',<br />Вы правильно ввели телефон?', 
+		  function () {	/* stackoverflow solution: var form = document.getElementById("form-id"); document.getElementById("your-id").addEventListener("click", function () { form.submit(); });   */
+			
+			
+			myApp.alert('Отправляю форму.');
+			
+			
+			
+			
+// ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ
+// ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ
+// ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ
+// ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ
+// ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ
+// ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ
+// ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ
+// ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ
+// ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ
+// ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ
+// ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ
+//document.getElementById("buyformid").submit();
+		  },
+		  function () {
+			myApp.alert('Введите правильный номер телефона, пожалуйста.');
+		  }
+		);
+	});   
+});
+
+

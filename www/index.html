@@ -141,9 +141,9 @@
 						<a class="link icon-only" onclick="window.location.href = 'whatsapp://send?text=Hello WhatsApp'; " href="#" > <i class="icon icon-msg-whatsapp" > </i></a>
 						<a class="link icon-only" onclick="window.location.href = 'viber://forward?text=Hello Viber'; " href="#" > <i class="icon icon-msg-viber" > </i></a> -->
 						
-						<a class="link external icon-only" href="tg://msg?text=HelloTelegram" > <i class="icon icon-msg-telegram-un" > </i></a> 
+						<!-- <a class="link external icon-only" href="tg://msg?text=HelloTelegram" > <i class="icon icon-msg-telegram-un" > </i></a> 
 						<a class="link external icon-only" href="whatsapp://send?text=HelloWhatsApp" > <i class="icon icon-msg-whatsapp" > </i></a>
-						<a class="link external icon-only" href="viber://forward?text=Hello Viber" > <i class="icon icon-msg-viber" > </i></a>
+						<a class="link external icon-only" href="viber://forward?text=Hello Viber" > <i class="icon icon-msg-viber" > </i></a> -->
 					</div>				
 				</div>
 			</div>
@@ -155,11 +155,20 @@
 				<a class="link external" href="viber://forward?text=Hello Viber">Viber</a><br /><br /><br /><br />
 				<br />
 				
-				
+				<p><a href="#" class="confirm-title-ok-cancel">Confirm with text, title, Ok and Cancel callback</a></p>
 				</div>
 
 				<div class="list-block">
 					<ul>
+					
+					<li><a href="buyform.html" class="item-link">
+					<div class="item-content">
+						<div class="item-media"><i class="icon icon-f7"></i></div>
+						<div class="item-inner">
+							<div class="item-title">Купить</div>
+						</div>
+					</div></a></li>
+					
 					<li><a href="#" data-catid="3" class="item-link item-content load-dynamic-page-category">
 					<div class="item-inner"> 
 					<div class="item-title">Великано</div>
@@ -247,7 +256,7 @@
 				<div class="right icon">
 					<a class="link icon-only" href="#" > <i class="icon icon-star-white" > </i></a>
  					<a class="link icon-only" onclick="window.plugins.socialsharing.share(null, null, null,  '{{link}}')" href="#" > <i class="icon icon-share" > </i></a> 
-					<a class="link icon-only" onclick="window.location.href = 'tel: 99999'; " href="#" > <i class="icon icon-phonecall" > </i></a>
+					<a class="link icon-only" onclick="window.location.href = 'tel: 999999';" href="#" > <i class="icon icon-phonecall" ></i></a>
 				</div>	
 			</div>
 		</div>
@@ -257,11 +266,26 @@
 		<div class="page-content hide-bars-on-scroll">
 		<div class="content-block">
 <p><a href="#" class="alert-text-title">Alert With Text and Title</a></p>
+			<p class="buttons-row">
+			<a href="#" onclick="window.location.href = 'tel: 999999';" class="button button-big button-fill color-green">Заказать по телефону</a>
+			<a href="buyform.html?linkurl={{link}}&linktitle={{title.rendered}}" class="button button-big button-fill color-blue">Заказать онлайн</a>
+			</p>
+			
 			<div class="content-block-inner">
-			<h3>{{title.rendered}}</h3>
-			<p>{{content.rendered}}</p>
+				<!-- <a href="buyform.html?linkurl={{link}}&linktitle={{title.rendered}}" class="item-content item-link">
+					<div class="item-inner">
+						<div class="item-title">Купить билет</div>
+					</div>
+				</a> -->	
+				<h3>{{title.rendered}}</h3>
+				<p>{{content.rendered}}</p>
 			</div>
-		</div>		
+			
+		<p class="buttons-row">
+		<a href="#" onclick="window.location.href = 'tel: 999999';" class="button button-big button-fill color-green">Заказать по телефону</a>
+		<a href="buyform.html?linkurl={{link}}&linktitle={{title.rendered}}" class="button button-big button-fill color-blue">Заказать онлайн</a>
+		</p>
+		</div>	
 		</div>
 	</div>
 </div>
@@ -269,13 +293,9 @@
 </div>
 </div>
 
-
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="cordova_plugins.js"></script>
 <script type="text/javascript" src="js/SocialSharing.js"></script>
-
-
-
 
 <!-- <script type="text/javascript" charset="utf-8">
 
