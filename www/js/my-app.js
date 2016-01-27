@@ -275,31 +275,19 @@ myApp.onPageInit('post',function(page){
 // Initializing Buyform Page ====================================
 myApp.onPageInit('buyform',function(page){
 	
+	// initial settings for toggle and submit button
+	$$('div.rowsubmit').show();
 	$$('input[type="checkbox"]').prop('checked', true);
-	
+
+	// onchange event processing
 	$$('input[type="checkbox"]').on('keyup keydown change', function (e) { 
-		// console.log('input value changed' + $$('.buttons-row')); 
 		var isChecked = $$('input[type="checkbox"]').prop('checked');
 		if(isChecked) {
-		console.log('isChecked: ' + isChecked); 
-			// $$('.buttons-row').html('<a href="#" class="confirm-title-ok-cancel button button-big button-fill color-green">Закажите билет</a>');
-			// $$('.buttons-row').html('<a href="#"  class="confirm-title-ok-cancel button button-big button-fill color-green">Закажите билет</a>');
-			// $$('.buttons-row').attr({
-			  // href: '#',
-			  // class: 'confirm-title-ok-cancel button button-big button-fill color-green'
-			// }); 
-			
+			// console.log('isChecked: ' + isChecked); 
 			$$('div.rowsubmit').show();
 		}
 		else {
-		console.log('isChecked: ' + isChecked); 
-			// $$('.buttons-row').html('<a href="#" class="confirm-title-ok-cancel button button-big button-fill color-red">Прочитайте условия</a>');
-			// $$('.buttons-row').html('<a href="rules.html" class="button button-big button-fill color-red">Прочитать условия заказа</a>');
-
-			// $$('.buttons-row').attr({
-			  // href: 'rules.html',
-			  // class: 'button button-big button-fill color-red'
-			// }); 
+			// console.log('isChecked: ' + isChecked); 
 			$$('div.rowsubmit').hide();
 		}
 	});
@@ -309,14 +297,16 @@ myApp.onPageInit('buyform',function(page){
 	$$('.confirm-title-ok-cancel').on('click', function () {
 		var idName = document.getElementById('name').value;
 		var idTel = document.getElementById('tel').value;
-		// myApp.confirm(idTel, 'Проверьте, верен ли Ваш номер телефона?', 
 		myApp.confirm(idTel, idName + ',<br />Вы правильно ввели телефон?', 
 		  function () {	/* stackoverflow solution: var form = document.getElementById("form-id"); document.getElementById("your-id").addEventListener("click", function () { form.submit(); });   */
-			
-			
 			myApp.alert('Отправляю форму.');
 			
+			
+			
 			document.getElementById("buyformid").submit();
+			
+			
+			
 		  },
 		  function () {
 			myApp.alert('Введите правильный номер телефона, пожалуйста.');
