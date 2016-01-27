@@ -17,17 +17,17 @@ var myApp = new Framework7({
 var $$ = Dom7;
 
 // Ajax timeout
+
 $$.ajaxSetup({
-	crossDomain: true, 
    timeout: 9000, // 5 seconds
    error: function(xhr) {
 		myApp.hideProgressbar();
-		 var status = xhr.status;
-		 myApp.alert( "Проверьте подключение к Интернету" , 'Ошибка сети', function () {
-			$$(".back").click();
-			});
-		 
-		}
+         var status = xhr.status;
+         myApp.alert( "Проверьте подключение к Интернету" , 'Ошибка сети', function () {
+            $$(".back").click();
+            });
+         
+        }
 });
 
 
@@ -252,11 +252,28 @@ myApp.onPageInit('post',function(page){
 
 
 
+/* 
+																				<a href="detail.html?id=1234">
+
+																				$$(document).on('pageInit', function(e) {
+																				   var page = e.detail.page;
+																				   // if your page has data-page="detail" attribute
+																				   if (page.name === 'detail') {
+																					  var id = page.query.id;
+																					  // do something here with id...
+																				   }
+																				});	
+ */
+
+
+
+
+
+
+
+
 // Initializing Buyform Page ====================================
 myApp.onPageInit('buyform',function(page){
-	
-					
-
 	
 	// initial settings for toggle and submit button
 	$$('div.rowsubmit').show();
@@ -274,12 +291,8 @@ myApp.onPageInit('buyform',function(page){
 			$$('div.rowsubmit').hide();
 		}
 	});
-				
-	//=====================================================================================================================================================			
-	//=====================================================================================================================================================			
-	//=====================================================================================================================================================	
-/* 
-	// 1st variant
+
+/* 	// 1st variant
 	//confirm dialog on buyform page
 	$$('.confirm-title-ok-cancel').on('click', function () {
 		var idName = document.getElementById('name').value;
@@ -294,31 +307,17 @@ myApp.onPageInit('buyform',function(page){
 				myApp.alert('Введите правильный номер телефона, пожалуйста.');
 			}
 		);
-	});   
-	 */			
-				
-	//=====================================================================================================================================================			
-	//=====================================================================================================================================================			
-	//=====================================================================================================================================================	
-
-
-	// ajax form submit error processing
-	$$('form.ajax-submit').on('submitted', function (e) {
-	 myApp.alert('Form submitted')
-	 console.log(e.detail.data);
-	});
-			
-	$$('form.ajax-submit').on('submitError', function (e) {
-	 myApp.alert('Form submitError')
-	 console.log(e.detail.data);
-	});
+	});  */  
 	
 	//confirm dialog on buyform page
 	$$('.confirm-title-ok-cancel').on('click', function () {
 		var idName = document.getElementById('name').value;
 		var idTel = document.getElementById('tel').value;
 		myApp.confirm(idTel, idName + ',<br />Вы правильно ввели телефон?', 
-			function () {
+			function () {	/* stackoverflow solution: var form = document.getElementById("form-id"); document.getElementById("your-id").addEventListener("click", function () { form.submit(); });   */
+				// document.getElementById("buyformid").submit();
+				// $$('form').trigger('submit'); // form sends via old button, but ajax timeout problem!!!
+				// $$('1111111111111').trigger('submit'); // not working!!!
 				$$('form.ajax-submit').trigger('submit'); // form sends via old button, but ajax timeout problem!!!
 				
 			},
@@ -327,11 +326,12 @@ myApp.onPageInit('buyform',function(page){
 			}
 		);
 	});   	
-
 	
-	//=====================================================================================================================================================			
-	//=====================================================================================================================================================			
-	//=====================================================================================================================================================	
+	
+	$$('form.ajax-submit').on('submitted', function (e) {
+	 myApp.alert('Form submitted')
+	});
+	
 	
 });
 
