@@ -263,6 +263,40 @@ myApp.onPageInit('buyform',function(page){
 	$$('input[type="checkbox"]').prop('checked', true);
 	// $$('input.name').focus(); // don't work
 	// document.getElementById("name").focus(); // input gets focus, but soft keyboard don't open
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	$$('input[type="text"]').on("keydown",function(event){
+       if (event.keyCode == 9) {
+		   myApp.alert('keyCode == 9! you got tab i.e "NEXT" Btn.');
+           //you got tab i.e "NEXT" Btn
+       }
+       if (event.keyCode == 13) {
+		   myApp.alert('keyCode == 13! you got tab i.e "GO" Btn.');
+           //you got enter i.e "GO" Btn
+       }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	// onchange event processing
 	$$('input[type="checkbox"]').on('keyup keydown change', function (e) { 
