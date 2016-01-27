@@ -17,6 +17,7 @@ var myApp = new Framework7({
 var $$ = Dom7;
 
 // Ajax timeout
+
 $$.ajaxSetup({
    timeout: 9000, // 5 seconds
    error: function(xhr) {
