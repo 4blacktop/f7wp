@@ -36,8 +36,11 @@ $inputurl =  $_POST['inputurl'];
 
 $message = 'Имя отправителя: '.$name.'
 Контактный телефон: '.$tel.'
-Со страницы: '.$inputurl.'
-Заявка на покупку билетов на мероприятие: '.$inputtitle;
+
+Заявка на покупку билетов на мероприятие:
+'.$inputtitle.'
+
+URL страницы: '.$inputurl;
 print_r ($message);
 echo "<hr />";
 
@@ -77,7 +80,8 @@ if (mail($to1, $subject, $message, $headers)) {
 	mail($to2, $subject, $message, $headers);
 	// header( 'Location: http://27biletov.ru', true, 301 );
 	}
-else {	echo 'Спасибо! Ваша заявка НЕ отправлена.<br /><a href="" onClick="history.back()">Назад</a>';	}
+else {	echo 'ВНИМАНИЕ! Ваша заявка НЕ отправлена. Пожалуйста, позвоните для уточнения. Спасибо.<br /><a href="" onClick="history.back()">Назад</a>';
+}
 
 
 

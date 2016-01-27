@@ -274,12 +274,36 @@ myApp.onPageInit('post',function(page){
 
 // Initializing Buyform Page ====================================
 myApp.onPageInit('buyform',function(page){
-	var linkurl = page.query.linkurl;
-	var linktitle = page.query.linktitle;
-	document.getElementById("inputurl").value = linkurl;
-	document.getElementById("inputtitle").value = linktitle;
-	console.log( 'linkurl: ' + linkurl);
-	console.log( 'linktitle: ' + linktitle);
+	
+	$$('input[type="checkbox"]').prop('checked', true);
+	
+	$$('input[type="checkbox"]').on('keyup keydown change', function (e) { 
+		// console.log('input value changed' + $$('.buttons-row')); 
+		var isChecked = $$('input[type="checkbox"]').prop('checked');
+		if(isChecked) {
+		console.log('isChecked: ' + isChecked); 
+			// $$('.buttons-row').html('<a href="#" class="confirm-title-ok-cancel button button-big button-fill color-green">Закажите билет</a>');
+			// $$('.buttons-row').html('<a href="#"  class="confirm-title-ok-cancel button button-big button-fill color-green">Закажите билет</a>');
+			// $$('.buttons-row').attr({
+			  // href: '#',
+			  // class: 'confirm-title-ok-cancel button button-big button-fill color-green'
+			// }); 
+			
+			$$('div.rowsubmit').show();
+		}
+		else {
+		console.log('isChecked: ' + isChecked); 
+			// $$('.buttons-row').html('<a href="#" class="confirm-title-ok-cancel button button-big button-fill color-red">Прочитайте условия</a>');
+			// $$('.buttons-row').html('<a href="rules.html" class="button button-big button-fill color-red">Прочитать условия заказа</a>');
+
+			// $$('.buttons-row').attr({
+			  // href: 'rules.html',
+			  // class: 'button button-big button-fill color-red'
+			// }); 
+			$$('div.rowsubmit').hide();
+		}
+	});
+
 	
 	//confirm dialog on buyform page
 	$$('.confirm-title-ok-cancel').on('click', function () {
@@ -292,21 +316,7 @@ myApp.onPageInit('buyform',function(page){
 			
 			myApp.alert('Отправляю форму.');
 			
-			
-			
-			
-// ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ
-// ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ
-// ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ
-// ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ
-// ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ
-// ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ
-// ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ
-// ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ
-// ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ
-// ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ
-// ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ ВЕРНУТЬ ВЕРНУТЬ ВЕРНУТЬ ДЛЯ ОТПРАВКИ ФОРМЫ
-document.getElementById("buyformid").submit();
+			document.getElementById("buyformid").submit();
 		  },
 		  function () {
 			myApp.alert('Введите правильный номер телефона, пожалуйста.');
