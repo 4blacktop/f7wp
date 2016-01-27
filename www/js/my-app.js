@@ -261,6 +261,8 @@ myApp.onPageInit('buyform',function(page){
 	// initial settings for toggle and submit button
 	$$('div.rowsubmit').show();
 	$$('input[type="checkbox"]').prop('checked', true);
+	// $$('input.name').focus();
+	document.getElementById("name").focus();
 
 	// onchange event processing
 	$$('input[type="checkbox"]').on('keyup keydown change', function (e) { 
