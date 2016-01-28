@@ -126,14 +126,6 @@ $$('.load-dynamic-page-post').on('click', function(){
 });
 
 
-
-
-
-
-
-
-
-
 // Initializing Home Page ====================================
 myApp.onPageInit('home',function(page){
 	$$(page.container).on('click','.alert-text-title',function(){
@@ -173,10 +165,11 @@ myApp.onPageInit('home',function(page){
 		if (container.children('.progressbar, .progressbar-infinite').length) return; //don't run all this if there is a current progressbar loading
 		myApp.showProgressbar(container, 'multi');
 		
-	$$.getJSON(postUrl, function (json) {
-	var stringified = JSON.stringify(json).replace( /<div role=\\\"form\\\"[\s\S]*wpcf7-display-none\\\"><\/div><\/form><\/div>/gm, "" );
-	var noform = JSON.parse(stringified);
-	var pageContent = myApp.postTemplate(noform);
+		// removing contact form 7 code from content
+		$$.getJSON(postUrl, function (json) {
+		var stringified = JSON.stringify(json).replace( /<div role=\\\"form\\\"[\s\S]*wpcf7-display-none\\\"><\/div><\/form><\/div>/gm, "" );
+		var noform = JSON.parse(stringified);
+		var pageContent = myApp.postTemplate(noform);
 		
 		myApp.hideProgressbar();
 		
@@ -255,23 +248,14 @@ myApp.onPageInit('post',function(page){
 // Initializing Buyform Page ====================================
 myApp.onPageInit('buyform',function(page){
 	
-					
-
-	
 	// initial settings for toggle and submit button
 	$$('div.rowsubmit').show();
 	$$('input[type="checkbox"]').prop('checked', true);
 	// $$('input.name').focus(); // don't work
 	// document.getElementById("name").focus(); // input gets focus, but soft keyboard don't open
 	
-	
-	
-	
-	
-	
-	
+	/* // this whole thing didn't work, only detects keyCode = 13. Project suspended
 	// http://stackoverflow.com/questions/23887544/how-to-trigger-a-tab-when-user-presses-enter
-	
 	$$('input[type="text"]').on("keydown",function(event){
        if (event.keyCode == 9) {
 		   // myApp.alert('keyCode == 9! you got tab i.e "NEXT" Btn.');
@@ -280,9 +264,6 @@ myApp.onPageInit('buyform',function(page){
        if (event.keyCode == 13) {
            //you got enter i.e "GO" Btn
 		   myApp.alert('keyCode == 13! you got enter i.e "GO" Btn.');
-		   
-		   
-		   
                 var inputs = $(this).parents("form").eq(0).find(":input:visible:not(:disabled):not([readonly])");
                 var idx = inputs.index(this);
                 if (idx == inputs.length - 1) {
@@ -296,26 +277,9 @@ myApp.onPageInit('buyform',function(page){
                 catch (err) {
                     // handle objects not offering select
                 }
-		   
-       }
-	   
-	   
+       } */
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	// onchange event processing
@@ -379,10 +343,9 @@ myApp.onPageInit('buyform',function(page){
 		myApp.confirm(idTel, idName + ',<br />Вы правильно ввели телефон?', 
 			function () {
 				$$('form.ajax-submit').trigger('submit'); // form sends via old button, but ajax timeout problem!!!
-				
 			},
 			function () {
-				myApp.alert('Введите правильный номер телефона, пожалуйста.');
+				// myApp.alert('Введите правильный номер телефона, пожалуйста.');
 			}
 		);
 	});   	
