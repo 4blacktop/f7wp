@@ -247,58 +247,63 @@ myApp.onPageInit('post',function(page){
 
 // Initializing Buyform Page ====================================
 myApp.onPageInit('buyform',function(page){
+	var linkurl = page.query.linkurl;
+	var linktitle = page.query.linktitle;
+	document.getElementById("inputurl").value = linkurl;
+	document.getElementById("inputtitle").value = linktitle;
+	console.log( 'linkurl: ' + linkurl);
+	console.log( 'linktitle: ' + linktitle);
 	
-	// initial settings for toggle and submit button
-	$$('div.rowsubmit').show();
-	$$('input[type="checkbox"]').prop('checked', true);
-	// $$('input.name').focus(); // don't work
-	// document.getElementById("name").focus(); // input gets focus, but soft keyboard don't open
 	
-	/* // this whole thing didn't work, only detects keyCode = 13. Project suspended
-	// http://stackoverflow.com/questions/23887544/how-to-trigger-a-tab-when-user-presses-enter
-	$$('input[type="text"]').on("keydown",function(event){
-       if (event.keyCode == 9) {
-		   // myApp.alert('keyCode == 9! you got tab i.e "NEXT" Btn.');
-           //you got tab i.e "NEXT" Btn
-       }
-       if (event.keyCode == 13) {
-           //you got enter i.e "GO" Btn
-		   myApp.alert('keyCode == 13! you got enter i.e "GO" Btn.');
-                var inputs = $(this).parents("form").eq(0).find(":input:visible:not(:disabled):not([readonly])");
-                var idx = inputs.index(this);
-                if (idx == inputs.length - 1) {
-                    idx = -1;
-                } else {
-                    inputs[idx + 1].focus(); // handles submit buttons
-                }
-                try {
-                    inputs[idx + 1].select();
-                }
-                catch (err) {
-                    // handle objects not offering select
-                }
-       } */
+// initial settings for toggle and submit button
+$$('div.rowsubmit').show();
+$$('input[type="checkbox"]').prop('checked', true);
+// $$('input.name').focus(); // don't work
+// document.getElementById("name").focus(); // input gets focus, but soft keyboard don't open
 
-});
+/* // this whole thing didn't work, only detects keyCode = 13. Project suspended
+// http://stackoverflow.com/questions/23887544/how-to-trigger-a-tab-when-user-presses-enter
+$$('input[type="text"]').on("keydown",function(event){
+   if (event.keyCode == 9) {
+	   // myApp.alert('keyCode == 9! you got tab i.e "NEXT" Btn.');
+	   //you got tab i.e "NEXT" Btn
+   }
+   if (event.keyCode == 13) {
+	   //you got enter i.e "GO" Btn
+	   myApp.alert('keyCode == 13! you got enter i.e "GO" Btn.');
+			var inputs = $(this).parents("form").eq(0).find(":input:visible:not(:disabled):not([readonly])");
+			var idx = inputs.index(this);
+			if (idx == inputs.length - 1) {
+				idx = -1;
+			} else {
+				inputs[idx + 1].focus(); // handles submit buttons
+			}
+			try {
+				inputs[idx + 1].select();
+			}
+			catch (err) {
+				// handle objects not offering select
+			}
+   } 
+
+});*/
 
 
-	// onchange event processing
-	$$('input[type="checkbox"]').on('keyup keydown change', function (e) { 
-		var isChecked = $$('input[type="checkbox"]').prop('checked');
-		if(isChecked) {
-			// console.log('isChecked: ' + isChecked); 
-			$$('div.rowsubmit').show();
-		}
-		else {
-			// console.log('isChecked: ' + isChecked); 
-			$$('div.rowsubmit').hide();
-		}
+// onchange event processing
+$$('input[type="checkbox"]').on('keyup keydown change', function (e) { 
+	var isChecked = $$('input[type="checkbox"]').prop('checked');
+	if(isChecked) {
+		$$('div.rowsubmit').show();
+	}
+	else {
+		$$('div.rowsubmit').hide();
+	}
 	});
 				
 	//=====================================================================================================================================================			
 	//=====================================================================================================================================================			
 	//=====================================================================================================================================================	
-/* 
+	/* 
 	// 1st variant
 	//confirm dialog on buyform page
 	$$('.confirm-title-ok-cancel').on('click', function () {
@@ -335,7 +340,7 @@ myApp.onPageInit('buyform',function(page){
 	 mainView.router.back({url: 'index.html', force: true});
 	 // console.log(e.detail.data);
 	});
-	
+
 	//confirm dialog on buyform page
 	$$('.confirm-title-ok-cancel').on('click', function () {
 		var idName = document.getElementById('name').value;
@@ -349,11 +354,6 @@ myApp.onPageInit('buyform',function(page){
 			}
 		);
 	});   	
-
-	
-	//=====================================================================================================================================================			
-	//=====================================================================================================================================================			
-	//=====================================================================================================================================================	
 	
 });
 
