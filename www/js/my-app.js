@@ -270,17 +270,37 @@ myApp.onPageInit('buyform',function(page){
 	
 	
 	
-	
+	// http://stackoverflow.com/questions/23887544/how-to-trigger-a-tab-when-user-presses-enter
 	
 	$$('input[type="text"]').on("keydown",function(event){
        if (event.keyCode == 9) {
-		   myApp.alert('keyCode == 9! you got tab i.e "NEXT" Btn.');
+		   // myApp.alert('keyCode == 9! you got tab i.e "NEXT" Btn.');
            //you got tab i.e "NEXT" Btn
        }
        if (event.keyCode == 13) {
-		   myApp.alert('keyCode == 13! you got tab i.e "GO" Btn.');
            //you got enter i.e "GO" Btn
+		   myApp.alert('keyCode == 13! you got enter i.e "GO" Btn.');
+		   
+		   
+		   
+                var inputs = $(this).parents("form").eq(0).find(":input:visible:not(:disabled):not([readonly])");
+                var idx = inputs.index(this);
+                if (idx == inputs.length - 1) {
+                    idx = -1;
+                } else {
+                    inputs[idx + 1].focus(); // handles submit buttons
+                }
+                try {
+                    inputs[idx + 1].select();
+                }
+                catch (err) {
+                    // handle objects not offering select
+                }
+		   
        }
+	   
+	   
+
 });
 
 
